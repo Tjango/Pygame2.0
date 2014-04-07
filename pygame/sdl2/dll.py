@@ -102,11 +102,11 @@ def _nonexistent(funcname, func):
 
 
 try:
-    os.environ["PYSDL2_DLL_PATH"] = os.getcwd() + '/sdl2/dll/x64'
+    os.environ["PYSDL2_DLL_PATH"] = os.getcwd() + '/pygame/sdl2/dll/x64'
     dll = _DLL("SDL2", ["SDL2", "SDL2-2.0"], os.getenv("PYSDL2_DLL_PATH"))
 except RuntimeError as exc:
     try:
-        os.environ["PYSDL2_DLL_PATH"] = os.getcwd() + '/sdl2/dll/x86'
+        os.environ["PYSDL2_DLL_PATH"] = os.getcwd() + '/pygame/sdl2/dll/x86'
         dll = _DLL("SDL2", ["SDL2", "SDL2-2.0"], os.getenv("PYSDL2_DLL_PATH"))
     except RuntimeError as exc:
         raise ImportError(exc)
